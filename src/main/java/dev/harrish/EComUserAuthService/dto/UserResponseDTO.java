@@ -15,6 +15,7 @@ public class UserResponseDTO
     private String name;
     private String email;
     private List <RoleResponseDTO> roles;
+    private String token;
 
     public static UserResponseDTO from(User user)
     {
@@ -23,6 +24,7 @@ public class UserResponseDTO
         UserResponseDTO userResponseDTO = new UserResponseDTO();
         userResponseDTO.setName(user.getName());
         userResponseDTO.setEmail(user.getEmail());
+        userResponseDTO.setToken(user.getToken());
         List <RoleResponseDTO> roleResponseDTOList = new ArrayList <> ();
         //convert to lambda and stream
         for(Role role: user.getRoles())
@@ -36,7 +38,6 @@ public class UserResponseDTO
         return userResponseDTO;
     }
 
-    //demo example
     public static User from(UserResponseDTO userResponseDTO)
     {
         return null;

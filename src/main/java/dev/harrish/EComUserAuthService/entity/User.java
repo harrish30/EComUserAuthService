@@ -15,6 +15,9 @@ public class User extends BaseModel
     private String name;
     private String email;
     private String password; //won't store actual password
+    private String token; //temporary solution
     @ManyToMany
     private List <Role> roles;
+
+    //No mappers in Entity, can have in DTOs(best practice)
 }
